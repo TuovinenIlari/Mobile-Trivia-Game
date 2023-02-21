@@ -16,6 +16,7 @@ class Quiz extends StatelessWidget {
   });
 
   void answerHander(entry) {
+    //TODO: Make button colour stay green or red for 500ms
     Future.delayed(const Duration(milliseconds: 500), () {
       if (entry.key == questions[questionIndex]['correct_answer']) {
         print('Correct!');
