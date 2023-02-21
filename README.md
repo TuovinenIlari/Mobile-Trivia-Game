@@ -13,3 +13,7 @@ Timed game: The app could offer timed games with a set amount of time for each q
 Help options: The app could provide options for users to get help with the questions, such as 50/50, or ask the audience.
 
 Sound and graphics: The app could include sound effects and graphics to create an immersive experience for the user.
+
+
+wireframe 
+https://www.figma.com/file/7JRPSpBLQfu346GzuefKza/Trivia-app?node-id=0%3A1&t=a9gAMLTj9fQTnh73-0
