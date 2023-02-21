@@ -21,7 +21,7 @@ class Answer extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
-              if (states.contains(MaterialState.selected)) {
+              if (states.contains(MaterialState.pressed)) {
                 if (answerKey == correctAnswer) {
                   return Colors.green;
                 } else {
