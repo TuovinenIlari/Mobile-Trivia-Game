@@ -106,19 +106,25 @@ class _HomePageState extends State<HomePage> {
   var _questionIndex = 0;
   var _totalScore = 0;
 
+  void answerQuestion(int score) {
+    setState(() {
+      _questionIndex++;
+    });
+    _totalScore += score;
+    print(_totalScore);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Trivia Game'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(25),
-          child: Column(
-            children: [
-              Quiz(questions: _questions, questionIndex: _questionIndex)
-            ],
-          ),
-        ));
+      appBar: AppBar(
+        title: const Text('Trivia Game'),
+      ),
+      body: Quiz(
+        questions: _questions,
+        questionIndex: _questionIndex,
+        answerQuestion: answerQuestion,
+      ),
+    );
   }
 }
