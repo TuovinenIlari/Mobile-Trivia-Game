@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/question.dart';
+
+import 'answer.dart';
 
 class Quiz extends StatelessWidget {
   final List questions;
@@ -12,26 +15,32 @@ class Quiz extends StatelessWidget {
     required this.answerQuestion,
   });
 
+  void answerHander(entry) {
+    Future.delayed(const Duration(milliseconds: 500), () {
+      if (entry.key == questions[questionIndex]['correct_answer']) {
+        print('Correct!');
+        answerQuestion(1);
+      } else {
+        print('Incorrect!');
+        answerQuestion(0);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(questions[questionIndex]['question'] as String),
+        Question(questionText: questions[questionIndex]['question'] as String),
         ...(questions[questionIndex]['answers'] as Map<String, String>)
             .entries
             .map(
-              (entry) => ElevatedButton(
-                onPressed: () {
-                  print(entry.key);
-                  if (entry.key == questions[questionIndex]['correct_answer']) {
-                    print('Correct!');
-                    answerQuestion(1);
-                  } else {
-                    print('Incorrect!');
-                    answerQuestion(0);
-                  }
-                },
-                child: Text(entry.value),
+              (entry) => Answer(
+                selectHandler: () => answerHander(entry),
+                answerText: entry.value,
+                answerKey: entry.key,
+                correctAnswer:
+                    questions[questionIndex]['correct_answer'] as String,
               ),
             ),
       ],
