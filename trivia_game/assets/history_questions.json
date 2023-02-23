@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What was the main cause of World War I?",
+    "answers": {
+      "a": "The assassination of Archduke Franz Ferdinand",
+      "b": "The rise of nationalism in Europe",
+      "c": "The Treaty of Versailles",
+      "d": "The Industrial Revolution"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Who was the first president of the United States?",
+    "answers": {
+      "a": "Thomas Jefferson",
+      "b": "George Washington",
+      "c": "Abraham Lincoln",
+      "d": "James Madison"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "What was the name of the first civilization in ancient Mesopotamia?",
+    "answers": {
+      "a": "Sumer",
+      "b": "Babylon",
+      "c": "Assyria",
+      "d": "Akkad"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Who was the first emperor of Rome?",
+    "answers": {
+      "a": "Julius Caesar",
+      "b": "Augustus",
+      "c": "Nero",
+      "d": "Caligula"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "Who wrote the Communist Manifesto?",
+    "answers": {
+      "a": "Karl Marx and Friedrich Engels",
+      "b": "Vladimir Lenin",
+      "c": "Joseph Stalin",
+      "d": "Leon Trotsky"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "What was the name of the first permanent English settlement in North America?",
+    "answers": {
+      "a": "Jamestown",
+      "b": "Plymouth",
+      "c": "Roanoke",
+      "d": "New Amsterdam"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Who invented the telephone?",
+    "answers": {
+      "a": "Alexander Graham Bell",
+      "b": "Thomas Edison",
+      "c": "Nikola Tesla",
+      "d": "Guglielmo Marconi"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "What was the name of the Russian royal family that was overthrown during the Russian Revolution?",
+    "answers": {
+      "a": "Romanov",
+      "b": "Habsburg",
+      "c": "Windsor",
+      "d": "Bourbon"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Who was the first female prime minister of Great Britain?",
+    "answers": {
+      "a": "Margaret Thatcher",
+      "b": "Theresa May",
+      "c": "Angela Merkel",
+      "d": "Hillary Clinton"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "What was the name of the event that marked the beginning of the French Revolution?",
+    "answers": {
+      "a": "The Storming of the Bastille",
+      "b": "The Reign of Terror",
+      "c": "The Hundred Days",
+      "d": "The Glorious Revolution"
+    },
+    "correct_answer": "a"
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "question": "What is the highest grossing film of all time?",
+    "answers": {
+      "a": "Avatar",
+      "b": "Titanic",
+      "c": "Avengers: Endgame",
+      "d": "Star Wars: The Force Awakens"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "Who directed the movie 'Jaws'?",
+    "answers": {
+      "a": "Steven Spielberg",
+      "b": "Alfred Hitchcock",
+      "c": "Martin Scorsese",
+      "d": "Francis Ford Coppola"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Who played the character of Neo in the movie 'The Matrix'?",
+    "answers": {
+      "a": "Tom Cruise",
+      "b": "Keanu Reeves",
+      "c": "Will Smith",
+      "d": "Johnny Depp"
+    },
+    "correct_answer": "b"
+  },
+  {
+    "question": "What is the name of the robot in the movie 'Wall-E'?",
+    "answers": {
+      "a": "EVA",
+      "b": "M-O",
+      "c": "AUTO",
+      "d": "Hal"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Who played the lead role in the movie 'The Dark Knight'?",
+    "answers": {
+      "a": "Christian Bale",
+      "b": "Robert Downey Jr.",
+      "c": "Ben Affleck",
+      "d": "Hugh Jackman"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Which movie won the Academy Award for Best Picture in 2020?",
+    "answers": {
+      "a": "Joker",
+      "b": "Once Upon a Time in Hollywood",
+      "c": "Parasite",
+      "d": "1917"
+    },
+    "correct_answer": "c"
+  },
+  {
+    "question": "Who directed the movie 'Pulp Fiction'?",
+    "answers": {
+      "a": "Quentin Tarantino",
+      "b": "Martin Scorsese",
+      "c": "Steven Spielberg",
+      "d": "Woody Allen"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "Which movie features the character of Tony Stark?",
+    "answers": {
+      "a": "Spider-Man: Homecoming",
+      "b": "Ant-Man and the Wasp",
+      "c": "Doctor Strange",
+      "d": "Iron Man"
+    },
+    "correct_answer": "d"
+  },
+  {
+    "question": "Who played the character of Rose in the movie 'Titanic'?",
+    "answers": {
+      "a": "Kate Winslet",
+      "b": "Jennifer Aniston",
+      "c": "Angelina Jolie",
+      "d": "Meryl Streep"
+    },
+    "correct_answer": "a"
+  },
+  {
+    "question": "What is the name of the dog in the movie 'The Wizard of Oz'?",
+    "answers": {
+      "a": "Snoopy",
+      "b": "Scooby-Doo",
+      "c": "Toto",
+      "d": "Rufus"
+    },
+    "correct_answer": "c"
+  }
+]
