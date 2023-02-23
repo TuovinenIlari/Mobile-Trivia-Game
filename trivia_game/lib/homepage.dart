@@ -1,8 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:trivia_game/quiz.dart';
+import 'package:trivia_game/score.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -105,13 +103,30 @@ class _HomePageState extends State<HomePage> {
 
   var _questionIndex = 0;
   var _totalScore = 0;
+  var _highScore = 0;
+  var quizSelected = false;
 
   void answerQuestion(int score) {
     setState(() {
       _questionIndex++;
+      if (_questionIndex >= _questions.length) {
+        _highScore = _totalScore;
+        _questionIndex = 0;
+        _totalScore = 0;
+        quizSelected = false;
+      }
     });
     _totalScore += score;
-    print(_totalScore);
+  }
+
+  void selectQuizGategory(String category) {
+    var quizCategory = category;
+
+    if (quizCategory == 'space') {
+      setState(() {
+        quizSelected = true;
+      });
+    }
   }
 
   @override
@@ -120,10 +135,49 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Trivia Game'),
       ),
-      body: Quiz(
-        questions: _questions,
-        questionIndex: _questionIndex,
-        answerQuestion: answerQuestion,
+      body: Column(
+        children: [
+          Center(
+            child: quizSelected == false
+                ? Column(
+                    children: [
+                      const Text(
+                        "Select a quiz category",
+                        style: TextStyle(fontSize: 36),
+                      ),
+                      ElevatedButton(
+                          onPressed: () {
+                            selectQuizGategory("space");
+                          },
+                          child: const Text('Space')),
+                      ElevatedButton(
+                          onPressed: () {
+                            selectQuizGategory("history");
+                          },
+                          child: const Text('History')),
+                      ElevatedButton(
+                          onPressed: () {
+                            selectQuizGategory("film");
+                          },
+                          child: const Text('Film')),
+                      Text("High Score: $_highScore",
+                          style: const TextStyle(fontSize: 36))
+                    ],
+                  )
+                : Column(
+                    children: [
+                      Quiz(
+                        questions: _questions,
+                        questionIndex: _questionIndex,
+                        answerQuestion: answerQuestion,
+                      ),
+                      Score(
+                        totalScore: _totalScore,
+                      ),
+                    ],
+                  ),
+          ),
+        ],
       ),
     );
   }

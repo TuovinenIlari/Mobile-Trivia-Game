@@ -28,14 +28,12 @@ class Answer extends StatelessWidget {
                   return Colors.red;
                 }
               }
+              return null;
             },
           ),
         ),
         onPressed: () {
-          Future.delayed(const Duration(milliseconds: 500), () {
-            selectHandler();
-// Here you can write your code
-          });
+          selectHandler();
         },
         child: Text(answerText),
       ),
