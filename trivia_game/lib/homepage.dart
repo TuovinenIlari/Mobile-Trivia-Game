@@ -137,43 +137,46 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Trivia Game'),
       ),
-      drawer: NavigationDrawer(
-        children: [
-          const DrawerHeader(
-            child: Text('Trivia Game'),
-          ),
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Home'),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePage()));
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.score),
-            title: const Text('Leaderboard'),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: const Icon(Icons.settings),
-            title: const Text('Settings'),
-            onTap: () {},
-          ),
-          const AboutListTile(
-            icon: Icon(Icons.info),
-            applicationName: 'Trivia Game',
-            applicationVersion: '1.0.0',
-            applicationIcon: Icon(Icons.info),
-            aboutBoxChildren: [
-              Text(
-                "MIT LICENSE",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              CopyrightPage(),
-            ],
-          ),
-        ],
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              child: Text('Trivia Game'),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const HomePage()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.score),
+              title: const Text('Leaderboard'),
+              onTap: () {},
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Settings'),
+              onTap: () {},
+            ),
+            const AboutListTile(
+              icon: Icon(Icons.info),
+              applicationName: 'Trivia Game',
+              applicationVersion: '1.0.0',
+              applicationIcon: Icon(Icons.info),
+              aboutBoxChildren: [
+                Text(
+                  "MIT LICENSE",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                CopyrightPage(),
+              ],
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: [
