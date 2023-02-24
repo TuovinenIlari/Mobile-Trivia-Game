@@ -143,6 +143,7 @@ class _HomePageState extends State<HomePage> {
             child: Text('Trivia Game'),
           ),
           ListTile(
+            leading: const Icon(Icons.home),
             title: const Text('Home'),
             onTap: () {
               Navigator.push(context,
@@ -150,10 +151,12 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.score),
             title: const Text('Leaderboard'),
             onTap: () {},
           ),
           ListTile(
+            leading: const Icon(Icons.settings),
             title: const Text('Settings'),
             onTap: () {},
           ),
