@@ -135,6 +135,26 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Trivia Game'),
       ),
+      drawer: NavigationDrawer(
+        children: [
+          const DrawerHeader(
+            child: Text('Trivia Game'),
+          ),
+          ListTile(
+            title: const Text('Home'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HomePage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('License'),
+            onTap: () {},
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Center(
