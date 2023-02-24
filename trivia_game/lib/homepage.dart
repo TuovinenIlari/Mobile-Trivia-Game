@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:trivia_game/quiz.dart';
 import 'package:trivia_game/score.dart';
 
+import 'copyright_page.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -143,15 +145,30 @@ class _HomePageState extends State<HomePage> {
           ListTile(
             title: const Text('Home'),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomePage()));
             },
           ),
           ListTile(
-            title: const Text('License'),
+            title: const Text('Leaderboard'),
             onTap: () {},
+          ),
+          ListTile(
+            title: const Text('Settings'),
+            onTap: () {},
+          ),
+          const AboutListTile(
+            icon: Icon(Icons.info),
+            applicationName: 'Trivia Game',
+            applicationVersion: '1.0.0',
+            applicationIcon: Icon(Icons.info),
+            aboutBoxChildren: [
+              Text(
+                "MIT LICENSE",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              CopyrightPage(),
+            ],
           ),
         ],
       ),
