@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trivia_game/quiz.dart';
 import 'package:trivia_game/score.dart';
 import 'package:trivia_game/api/httphelper.dart';
+import 'package:trivia_game/settings.dart';
 import 'copyright_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -98,7 +99,10 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Settings'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Settings()));
+              },
             ),
             const AboutListTile(
               icon: Icon(Icons.info),
