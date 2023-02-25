@@ -5,7 +5,8 @@ import 'package:trivia_game/api/httphelper.dart';
 import 'copyright_page.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.userName});
+  final String userName;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -74,15 +75,19 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              child: Text('Trivia Game'),
+            DrawerHeader(
+              child: Text("Username: ${widget.userName}"),
             ),
             ListTile(
               leading: const Icon(Icons.home),
               title: const Text('Home'),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const HomePage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => HomePage(
+                              userName: widget.userName,
+                            )));
               },
             ),
             ListTile(
