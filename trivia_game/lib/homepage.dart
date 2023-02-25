@@ -36,17 +36,30 @@ class _HomePageState extends State<HomePage> {
     var quizCategory = category;
 
     if (quizCategory == 'space') {
-      print("1");
-      getQuestions();
-      print("2");
+      getQuestions(quizCategory);
+
       setState(() {
         quizSelected = true;
       });
+    } else if (quizCategory == 'history') {
+      getQuestions(quizCategory);
+
+      setState(() {
+        quizSelected = true;
+      });
+    } else if (quizCategory == "film") {
+      getQuestions(quizCategory);
+
+      setState(() {
+        quizSelected = true;
+      });
+    } else {
+      print("Error: No category selected");
     }
   }
 
-  void getQuestions() async {
-    _spacequestions = HTTPHelper().fetchSpaceQuestions();
+  void getQuestions(String category) async {
+    _spacequestions = HTTPHelper().fetchSpaceQuestions(category);
     _questions = await _spacequestions!;
     print("valmis");
   }
