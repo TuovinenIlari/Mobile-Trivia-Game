@@ -21,7 +21,7 @@ class _ProfileDataEntryState extends State<ProfileDataEntry> {
     ProfileData().setName(userName);
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const HomePage()),
+      MaterialPageRoute(builder: (context) => HomePage(userName: userName)),
     );
   }
 
