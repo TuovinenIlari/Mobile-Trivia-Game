@@ -37,4 +37,16 @@ class HTTPHelper {
 
     return leaderBoard;
   }
+
+  void saveScore(int score, String category, String username) async {
+    print("Saving score...");
+
+    http.Response response = await http.get(Uri.parse(
+        'http://64.227.75.70/node/trivia/$username/$score/$category'));
+    if (response.statusCode == 200) {
+      print("Score saved");
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 }
