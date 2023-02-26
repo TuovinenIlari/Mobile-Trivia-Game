@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/leaderboard.dart';
 import 'package:trivia_game/quiz.dart';
 import 'package:trivia_game/score.dart';
 import 'package:trivia_game/api/httphelper.dart';
@@ -94,7 +95,12 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: const Icon(Icons.score),
               title: const Text('Leaderboard'),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Leaderboard()));
+              },
             ),
             ListTile(
               leading: const Icon(Icons.settings),
