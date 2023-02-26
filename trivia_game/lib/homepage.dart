@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   var _totalScore = 0;
   var _highScore = 0;
   var quizSelected = false;
+  var quizCategory = '';
   Future<List>? _spacequestions;
 
   void answerQuestion(int score) {
@@ -27,6 +28,9 @@ class _HomePageState extends State<HomePage> {
       _questionIndex++;
       if (_questionIndex >= _questions.length) {
         _highScore = _totalScore;
+
+        saveScore(_highScore, quizCategory, widget.userName);
+
         _questionIndex = 0;
         _totalScore = 0;
         quizSelected = false;
@@ -35,8 +39,12 @@ class _HomePageState extends State<HomePage> {
     _totalScore += score;
   }
 
+  void saveScore(int score, String category, String username) {
+    HTTPHelper().saveScore(score, category, username);
+  }
+
   void selectQuizGategory(String category) {
-    var quizCategory = category;
+    quizCategory = category;
 
     if (quizCategory == 'space') {
       getQuestions(quizCategory);
@@ -136,21 +144,30 @@ class _HomePageState extends State<HomePage> {
                         "Select a quiz category",
                         style: TextStyle(fontSize: 36),
                       ),
-                      ElevatedButton(
-                          onPressed: () {
-                            selectQuizGategory("space");
-                          },
-                          child: const Text('Space')),
-                      ElevatedButton(
-                          onPressed: () {
-                            selectQuizGategory("history");
-                          },
-                          child: const Text('History')),
-                      ElevatedButton(
-                          onPressed: () {
-                            selectQuizGategory("film");
-                          },
-                          child: const Text('Film')),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              selectQuizGategory("space");
+                            },
+                            child: const Text('Space')),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              selectQuizGategory("history");
+                            },
+                            child: const Text('History')),
+                      ),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              selectQuizGategory("film");
+                            },
+                            child: const Text('Film')),
+                      ),
                       Text("High Score: $_highScore",
                           style: const TextStyle(fontSize: 36))
                     ],
