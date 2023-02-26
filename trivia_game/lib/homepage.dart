@@ -86,6 +86,11 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
+              decoration: const BoxDecoration(
+                color: Colors.blue,
+                image: DecorationImage(
+                    image: AssetImage("assets/logo.png"), fit: BoxFit.cover),
+              ),
               child: Text("Username: ${widget.userName}"),
             ),
             ListTile(
