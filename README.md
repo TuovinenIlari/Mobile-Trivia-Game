@@ -1,3 +1,7 @@
+# Simple Flutter Trivia App for web and hybrid technologies course.
+
+
+
 Here are some possible features for a trivia game app:
 
 User authentication: The app could allow users to sign up and log in to their accounts to save their game progress, score, and other preferences.
