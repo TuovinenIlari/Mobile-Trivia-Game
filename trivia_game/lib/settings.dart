@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/api/preferences.dart';
+import 'package:trivia_game/main.dart';
 import 'package:trivia_game/profile_data.dart';
 
 import 'homepage.dart';
@@ -22,6 +24,17 @@ class _SettingsState extends State<Settings> {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => HomePage(userName: userName)),
+    );
+  }
+
+  void deleteUserName() {
+    Preferences().clearName();
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+          builder: (context) => const MyApp(
+                userName: "",
+              )),
     );
   }
 
@@ -55,6 +68,14 @@ class _SettingsState extends State<Settings> {
                     ),
                   },
               child: const Text("Save")),
+          ElevatedButton(
+              onPressed: () => {
+                    deleteUserName(),
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('deleted')),
+                    ),
+                  },
+              child: const Text("Delete Username")),
         ],
       ),
     );
