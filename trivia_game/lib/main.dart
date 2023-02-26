@@ -4,8 +4,6 @@ import 'package:trivia_game/profile_data_entry.dart';
 
 import 'homepage.dart';
 
-// TODO: add functionality to get and display high scores
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Future<String> name = Preferences().getName();
