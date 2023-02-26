@@ -38,25 +38,33 @@ class _ProfileDataEntryState extends State<ProfileDataEntry> {
       appBar: AppBar(
         title: const Text('Profile Data Entry'),
       ),
-      body: Column(
-        children: [
-          const SizedBox(
-            width: double.infinity,
-            child: Text(
-              'Enter your name',
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            const Text(
+              'Welcome to the Trivia Game',
               style: TextStyle(fontSize: 28),
               textAlign: TextAlign.center,
             ),
-          ),
-          TextFormField(
-            controller: myController,
-            decoration: const InputDecoration(
-              labelText: 'Name',
+            const SizedBox(
+              width: double.infinity,
+              child: Text(
+                'Enter your name',
+                style: TextStyle(fontSize: 28),
+                textAlign: TextAlign.center,
+              ),
             ),
-          ),
-          ElevatedButton(
-              onPressed: () => saveForm(), child: const Text("Save")),
-        ],
+            TextFormField(
+              controller: myController,
+              decoration: const InputDecoration(
+                labelText: 'Name',
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () => saveForm(), child: const Text("Save")),
+          ],
+        ),
       ),
     );
   }

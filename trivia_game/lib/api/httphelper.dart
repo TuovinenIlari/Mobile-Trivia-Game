@@ -20,4 +20,33 @@ class HTTPHelper {
 
     return questions;
   }
+
+  Future<List> fetchLeaderBoard() async {
+    List leaderBoard = [];
+
+    print("Fetching leader board...");
+
+    http.Response response = await http
+        .get(Uri.parse('http://64.227.75.70/node/trivia/leaderboard'));
+
+    if (response.statusCode == 200) {
+      leaderBoard = jsonDecode(response.body);
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+
+    return leaderBoard;
+  }
+
+  void saveScore(int score, String category, String username) async {
+    print("Saving score...");
+
+    http.Response response = await http.get(Uri.parse(
+        'http://64.227.75.70/node/trivia/$username/$score/$category'));
+    if (response.statusCode == 200) {
+      print("Score saved");
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 }
