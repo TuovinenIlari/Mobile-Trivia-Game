@@ -9,12 +9,17 @@ class Leaderboard extends StatefulWidget {
 }
 
 class _LeaderboardState extends State<Leaderboard> {
+  _LeaderboardState() {
+    getleaderboard();
+  }
   Future<List>? _leaderboard;
   List _leaderboardList = [];
 
-  void get leaderboard async {
+  void getleaderboard() async {
     _leaderboard = HTTPHelper().fetchLeaderBoard();
     _leaderboardList = await _leaderboard!;
+    print("Leaderboard valmis");
+    print(_leaderboardList.length);
   }
 
   @override
@@ -23,36 +28,43 @@ class _LeaderboardState extends State<Leaderboard> {
       appBar: AppBar(
         title: const Text('Leaderboard'),
       ),
-      body: Column(
-        children: [
-          const Text('Leaderboard'),
-          FutureBuilder(
-            future: _leaderboard,
-            builder: (BuildContext context, AsyncSnapshot snapshot) {
-              if (snapshot.hasError) {
-                return const Center(
-                  child: Text("Error"),
-                );
-              }
-              if (snapshot.hasData) {
-                return ListView.builder(
-                  itemCount: _leaderboardList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return ListTile(
-                      title: Text(_leaderboardList[index]['name']),
-                      subtitle: Text(_leaderboardList[index]['score'] +
-                          _leaderboardList[index]['category']),
-                    );
-                  },
-                );
-              } else {
-                return const Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            },
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Text('Leaderboard'),
+            FutureBuilder(
+              future: _leaderboard,
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasError) {
+                  return const Center(
+                    child: Text("Error"),
+                  );
+                }
+                if (snapshot.hasData) {
+                  return SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      child: ListView.builder(
+                        itemCount: _leaderboardList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return ListTile(
+                            title: Text(_leaderboardList[index]['userName']),
+                            subtitle: Text(
+                                "Score: ${_leaderboardList[index]['score']} Category: ${_leaderboardList[index]['category']}",
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                )),
+                          );
+                        },
+                      ));
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
