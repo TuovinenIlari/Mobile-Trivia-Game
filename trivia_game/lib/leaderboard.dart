@@ -25,13 +25,12 @@ class _LeaderboardState extends State<Leaderboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Leaderboard'),
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Text('Leaderboard'),
+            const Text('Leaderboard',
+                style: TextStyle(color: Colors.black, fontSize: 30)),
             FutureBuilder(
               future: _leaderboard,
               builder: (BuildContext context, AsyncSnapshot snapshot) {
